@@ -1,0 +1,49 @@
+---
+title: "INTERMACS adverse event prediction"
+author: "Byron C. Jaeger"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  html_document:
+    df_print: paged
+    highlight: textmate 
+    theme: readable
+    code_folding: hide
+    toc: true
+    toc_float: true
+    fig_width: 7
+    fig_height: 5
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Analysis
+
+```{r, echo = FALSE, out.width = '100%'}
+
+d <- readd(xgb_fit_final)
+
+print(d$auc)
+
+print(d$imp)
+
+```
+
+
+## Reproducibility
+
+<details><summary>Reproducibility receipt</summary>
+
+```{r}
+## datetime
+Sys.time()
+
+## repository
+git2r::repository()
+
+## session info
+sessionInfo()
+```
+
+</details>
